@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app>
+<head lang="pt-br">
+	<meta charset="UTF-8">
+	<title> Dados Pessoais - JORGE SOARES XIMENES</title>
+	<!-- necessario estar conectado a internet -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+	
+	
+</head>
+<body>
+<form>
+<H1>Busca:</H1> <input type ="search" ng-model="busca">
+   <div ng-controller="CtrlDadosPessoais">
+      <ul>
+          <li ng-repeat ="dado in dados | filter:busca">
+          
+            {{dado.nome}} - {{dado.rg}} - {{dado.cpf}}
+          </li>
+       </ul>
+   </div>
+   <br/>
+   
+   <H1>Busca:</H1> <input type ="search" ng-model="busca2">
+   <div ng-controller="CtrlEnderecoPessoal">
+      <ul>
+          <li ng-repeat ="endereco in enderecos | filter:busca2">
+          
+            {{endereco.lougradouro}} - {{endereco.numero}} - {{endereco.bairro}} - {{endereco.cep}}
+          </li>
+       </ul>
+   </div>
+   
+<script>
+   var CtrlDadosPessoais = function($scope)
+   {
+      <!-- criar  -->
+      $scope.dados = [
+
+      {nome:"Felipe", rg:"123456" , cpf:"123.456.567-00"},
+      {nome:"Roberto", rg:"654125" , cpf:"001.656.890-11"},
+      {nome:"luis", rg:"987444" , cpf:"456.852.234-44"},
+      ];
+   }
+</script>
+
+<script>
+   var CtrlEnderecoPessoal = function($scope)
+   {
+      <!-- criar  -->
+      $scope.enderecos = [
+
+      {lougradouro:"Rua calama", numero:"3143" , bairro:"JK" , cep: "76934-412"},
+      {lougradouro:"Av. 7 de setembro", numero:"2755" , bairro:"JK" , cep: "76934-412"},
+      {lougradouro:"Rua da beira", numero:"7433" , bairro:"JK" , cep: "76934-412"},
+      ];
+   }
+</script>
+</form>
+</body>
+
+</html>

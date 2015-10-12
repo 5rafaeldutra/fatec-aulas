@@ -1,0 +1,12 @@
+/* CSS PERSONALIZADO*/
+
+
+.lineGray {background: Gray;}
+
+.lineBlue {background: Blue;}
+
+.lineRed {background: Red;}
+
+.lineYellow {background: Yellow;}
+
+.linePersonal {background: Green; padding-top: 10px; padding-bottom: 10px}
